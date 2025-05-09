@@ -71,7 +71,7 @@ fun calcularPromedioTresNotas(nota1: Double, nota2: Double, nota3: Double): Doub
 
 fun obtenerEstadoAlumno(nombre: String, apellido: String, nota: Double): String {
     // Implementar aquí
-    return "El alumno $nombre $apellido tiene una nota de $nota y está ${if (esAprobado(nota)) "aprobado" else "reprobado"}."
+    return "El alumno $nombre $apellido tiene una nota de $nota y está ${if (esAprobado(nota)) "aprobado" else "desaprobado"}."
 }
 
 // Etapa 3
