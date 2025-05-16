@@ -54,29 +54,24 @@ fun main() {
 
 // Etapa 1
 fun calcularPromedio(nota1: Double, nota2: Double): Double {
-    // Implementar aquí
     return (nota1 + nota2) / 2
 }
 
 fun esAprobado(nota: Double): Boolean {
-    // Implementar aquí
     return nota >= 6.0
 }
 
 // Etapa 2
 fun calcularPromedioTresNotas(nota1: Double, nota2: Double, nota3: Double): Double {
-    // Implementar aquí
     return (nota1 + nota2 + nota3) / 3
 }
 
 fun obtenerEstadoAlumno(nombre: String, apellido: String, nota: Double): String {
-    // Implementar aquí
     return "El alumno $nombre $apellido tiene una nota de $nota y está ${if (esAprobado(nota)) "aprobado" else "desaprobado"}."
 }
 
 // Etapa 3
 fun calcularPromedioCurso(notas: List<Double>): Double {
-    // Implementar aquí
 return if (notas.isNotEmpty()) notas.sum() / notas.size else 0.0
 }
 
@@ -86,21 +81,29 @@ fun obtenerAlumnosAprobados(nombres: List<String>, notas: List<Double>): List<St
 
 // Etapa 4
 fun generarBoletin(nombre: String, materias: List<String>, notas: List<Double>): String {
-    // Implementar aquí
-    return ""
+    val boletin = StringBuilder()
+    boletin.append("Boletín de Calificaciones\n")
+    boletin.append("Alumno: $nombre\n")
+    boletin.append("Materias y Notas:\n")
+    for ((materia, nota) in materias.zip(notas)) {
+        boletin.append("- $materia: $nota\n")
+    }
+    val promedio = calcularPromedioCurso(notas)
+    boletin.append("Promedio General: $promedio\n")
+    boletin.append("Estado: ${if (esAprobado(promedio)) "Aprobado" else "Desaprobado"}")
+    return boletin.toString()
 }
 
 fun obtenerNotaMasAlta(notas: List<Double>): Double {
-    // Implementar aquí
-    return 0.0
+    return notas.maxOrNull() ?: 0.0
 }
 
 fun obtenerNotaMasBaja(notas: List<Double>): Double {
     // Implementar aquí
-    return 0.0
+    return notas.minOrNull() ?: 0.0
 }
 
 fun contarAprobados(notas: List<Double>): Int {
     // Implementar aquí
-    return 0
+    return notas.count { it >= 6.0 }
 }
