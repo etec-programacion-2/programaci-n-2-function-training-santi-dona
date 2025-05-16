@@ -77,12 +77,11 @@ fun obtenerEstadoAlumno(nombre: String, apellido: String, nota: Double): String 
 // Etapa 3
 fun calcularPromedioCurso(notas: List<Double>): Double {
     // Implementar aquí
-    return 0.0
+return if (notas.isNotEmpty()) notas.sum() / notas.size else 0.0
 }
 
 fun obtenerAlumnosAprobados(nombres: List<String>, notas: List<Double>): List<String> {
-    // Implementar aquí
-    return emptyList()
+    return nombres.zip(notas).filter { it.second >= 6.0 }.map { it.first }
 }
 
 // Etapa 4
