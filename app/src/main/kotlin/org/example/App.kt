@@ -58,7 +58,7 @@ fun calcularPromedio(nota1: Double, nota2: Double): Double {
 }
 
 fun esAprobado(nota: Double): Boolean {
-    return nota >= 6.0
+    return nota >= 7.0
 }
 
 // Etapa 2
@@ -76,7 +76,7 @@ return if (notas.isNotEmpty()) notas.sum() / notas.size else 0.0
 }
 
 fun obtenerAlumnosAprobados(nombres: List<String>, notas: List<Double>): List<String> {
-    return nombres.zip(notas).filter { it.second >= 6.0 }.map { it.first }
+    return nombres.zip(notas).filter { it.second >= 7.0 }.map { it.first }
 }
 
 // Etapa 4
@@ -105,5 +105,5 @@ fun obtenerNotaMasBaja(notas: List<Double>): Double {
 
 fun contarAprobados(notas: List<Double>): Int {
     // Implementar aquí
-    return notas.count { it >= 6.0 }
+    return notas.count { it >= 7.0 }
 }
